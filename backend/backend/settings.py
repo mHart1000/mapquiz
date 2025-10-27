@@ -76,12 +76,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mapquiz',
-        'USER': 'postgres',
-        'PASSWORD': '',  # fill in if you have one
-        'HOST': 'localhost',
+        'USER': 'mapquiz_user',
+        'PASSWORD': 'mapquizpass',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
