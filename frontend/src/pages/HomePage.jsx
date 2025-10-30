@@ -1,12 +1,17 @@
-import { Link } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
+import { Box, Heading, Text, Button, VStack } from '@chakra-ui/react'
 
 function HomePage() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-      <h1>Welcome to the Map Quiz App</h1>
-      <p>Select a city to start</p>
-      <Link to="/san-diego">Go to San Diego</Link>
-    </div>
+    <Box textAlign="center" py={20} bg="gray.50" minH="100vh">
+      <VStack spacing={6}>
+        <Heading>Welcome to the Map Quiz App</Heading>
+        <Text>Select a city to start</Text>
+        <Button as={RouterLink} to="/san-diego" colorScheme="blue" size="lg">
+          Go to San Diego
+        </Button>
+      </VStack>
+    </Box>
   )
 }
 
