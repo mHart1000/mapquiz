@@ -1,17 +1,18 @@
 import { Link as RouterLink } from 'react-router-dom'
-import { Box, Heading, Text, Button, VStack } from '@chakra-ui/react'
+import { Heading, Text, Button, VStack } from '@chakra-ui/react'
+import Layout from '../components/Layout'
 
 function HomePage() {
   return (
-    <Box textAlign="center" py={20} bg="gray.50" minH="100vh">
-      <VStack spacing={6}>
+    <Layout>
+      <VStack spacing={6} align="center">
         <Heading>Welcome to the Map Quiz App</Heading>
         <Text>Select a city to start</Text>
         <Button as={RouterLink} to="/san-diego" colorScheme="blue" size="lg">
           Go to San Diego
         </Button>
       </VStack>
-    </Box>
+    </Layout>
   )
 }
 

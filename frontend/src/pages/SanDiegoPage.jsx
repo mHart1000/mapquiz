@@ -1,9 +1,14 @@
+import { Heading, Text, VStack } from '@chakra-ui/react'
+import Layout from '../components/Layout'
+
 function SanDiegoPage() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-      <h1>San Diego Quiz</h1>
-      <p>Coming soon!</p>
-    </div>
+    <Layout>
+      <VStack spacing={4} align="center">
+        <Heading>San Diego Quiz</Heading>
+        <Text>Coming soon!</Text>
+      </VStack>
+    </Layout>
   )
 }
 
