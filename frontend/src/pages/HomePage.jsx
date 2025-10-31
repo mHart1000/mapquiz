@@ -6,10 +6,19 @@ function HomePage() {
   return (
     <Layout>
       <VStack spacing={6} align="center">
-        <Heading>Welcome to the Map Quiz App</Heading>
-        <Text>Select a city to start</Text>
+        <Heading>Map Quiz App</Heading>
+        <Text>Cities</Text>
         <Button as={RouterLink} to="/san-diego" colorScheme="blue" size="lg">
-          Go to San Diego
+          San Diego
+        </Button>
+        <Button colorScheme="blue" size="lg">
+          Chicago
+        </Button>
+        <Button colorScheme="blue" size="lg">
+          New York
+        </Button>
+        <Button colorScheme="blue" size="lg">
+          Los Angeles
         </Button>
       </VStack>
     </Layout>
