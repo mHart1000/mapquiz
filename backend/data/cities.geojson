@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "San Diego" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-117.2803, 32.5343],
+          [-117.1500, 32.5343],
+          [-117.1500, 32.7153],
+          [-117.2803, 32.7153],
+          [-117.2803, 32.5343]
+        ]]
+      }
+    }
+  ]
+}

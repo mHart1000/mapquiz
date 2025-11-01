@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from quizzes.views import QuizViewSet
+from quizzes.views import city_list
 
 router = DefaultRouter()
 router.register(r'quizzes', QuizViewSet)
@@ -25,4 +26,5 @@ router.register(r'quizzes', QuizViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/cities/', city_list),
 ]
