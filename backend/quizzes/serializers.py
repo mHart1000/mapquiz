@@ -1,8 +1,7 @@
-from rest_framework import serializers
 from rest_framework_gis.serializers import GeoFeatureModelSerializer
-from .models import Quiz, City
+from .models import City, Quiz
 
-class QuizSerializer(serializers.ModelSerializer):
+class QuizSerializer(GeoFeatureModelSerializer):
     class Meta:
         model = Quiz
         fields = '__all__'

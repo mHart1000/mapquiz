@@ -8,9 +8,9 @@ class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
 
-def city_list(request):
-    geojson = serialize('geojson', City.objects.all())
-    return HttpResponse(geojson, content_type='application/json')
+class CityList(generics.ListAPIView):
+    queryset = City.objects.all()
+    serializer_class = CitySerializer
 
 class CityDetail(generics.RetrieveAPIView):
     lookup_field = 'slug'

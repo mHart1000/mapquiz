@@ -1,4 +1,5 @@
 from django.contrib.gis.db import models
+from django.utils.text import slugify
 
 class Quiz(models.Model):
     name = models.CharField(max_length=200)
