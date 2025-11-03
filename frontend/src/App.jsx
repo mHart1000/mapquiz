@@ -1,12 +1,12 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import HomePage from './pages/HomePage'
-import SanDiegoPage from './pages/SanDiegoPage'
+import CityPage from './pages/CityPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/san-diego" element={<SanDiegoPage />} />
+      <Route path="/:city" element={<CityPage />} />
     </Routes>
   )
 }

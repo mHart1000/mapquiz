@@ -72,3 +72,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 package-lock.json
+
+# Ignore GIS / shapefile data
+backend/data/
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
+*.xml

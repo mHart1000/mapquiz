@@ -6,7 +6,6 @@ function SanDiegoPage() {
     <Layout>
       <VStack spacing={4} align="center">
         <Heading>San Diego Quiz</Heading>
-        <Text>Coming soon!</Text>
       </VStack>
     </Layout>
   )
