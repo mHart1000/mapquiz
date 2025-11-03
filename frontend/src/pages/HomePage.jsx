@@ -17,7 +17,7 @@ function HomePage() {
         <Button colorScheme="blue" size="lg">
           New York
         </Button>
-        <Button colorScheme="blue" size="lg">
+        <Button as={RouterLink} to="/los-angeles" colorScheme="blue" size="lg">
           Los Angeles
         </Button>
       </VStack>
