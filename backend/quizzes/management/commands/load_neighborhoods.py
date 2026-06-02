@@ -42,6 +42,12 @@ class Command(BaseCommand):
             if not name:
                 skipped += 1
                 continue
+            name = ' '.join(name.split())
+            if 'not a community plan' in name.lower():  # source placeholder rows
+                skipped += 1
+                continue
+            if name.isupper():  # ALL-CAPS source names -> Title Case for display
+                name = name.title()
 
             geom = GEOSGeometry(json.dumps(feature['geometry']), srid=4326)
             if geom.geom_type == 'Polygon':
