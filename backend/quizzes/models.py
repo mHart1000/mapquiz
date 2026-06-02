@@ -22,3 +22,24 @@ class City(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Neighborhood(models.Model):
+    city = models.ForeignKey(City, related_name='neighborhoods', on_delete=models.CASCADE)
+    name = models.CharField(max_length=120)
+    slug = models.SlugField(blank=True)
+    geometry = models.MultiPolygonField(srid=4326)
+
+    class Meta:
+        # slug is unique within a city, not globally
+        constraints = [
+            models.UniqueConstraint(fields=['city', 'slug'], name='unique_neighborhood_slug_per_city'),
+        ]
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super(Neighborhood, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.name} ({self.city.name})'
