@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from quizzes.views import QuizViewSet, CityList, CityDetail
+from quizzes.views import (
+    QuizViewSet, CityList, CityDetail,
+    NeighborhoodList, QuizQuestion, QuizAnswer,
+)
 
 
 router = DefaultRouter()
@@ -26,6 +29,9 @@ router.register(r'quizzes', QuizViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/cities/<slug:slug>/neighborhoods/', NeighborhoodList.as_view(), name='neighborhood-list'),
+    path('api/cities/<slug:slug>/quiz/question/', QuizQuestion.as_view(), name='quiz-question'),
+    path('api/cities/<slug:slug>/quiz/answer/', QuizAnswer.as_view(), name='quiz-answer'),
     path('api/cities/<slug:slug>/', CityDetail.as_view(), name='city-detail'),
     path('api/cities/', CityList.as_view(), name='city-list'),
  ]
