@@ -11,14 +11,14 @@ function HomePage() {
         <Button as={RouterLink} to="/san-diego" colorScheme="blue" size="lg">
           San Diego
         </Button>
-        <Button colorScheme="blue" size="lg">
-          Chicago
+        <Button colorScheme="blue" size="lg" isDisabled>
+          Chicago (coming soon)
         </Button>
-        <Button colorScheme="blue" size="lg">
-          New York
+        <Button colorScheme="blue" size="lg" isDisabled>
+          New York (coming soon)
         </Button>
-        <Button as={RouterLink} to="/los-angeles" colorScheme="blue" size="lg">
-          Los Angeles
+        <Button colorScheme="blue" size="lg" isDisabled>
+          Los Angeles (coming soon)
         </Button>
       </VStack>
     </Layout>
