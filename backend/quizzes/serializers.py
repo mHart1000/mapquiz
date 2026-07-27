@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rest_framework_gis.serializers import GeoFeatureModelSerializer
+from rest_framework_gis.serializers import GeoFeatureModelSerializer, GeometrySerializerMethodField
 from .models import City, Quiz, Neighborhood
 
 class QuizSerializer(serializers.ModelSerializer):
@@ -16,7 +16,12 @@ class CitySerializer(GeoFeatureModelSerializer):
 class NeighborhoodSerializer(GeoFeatureModelSerializer):
     """Anonymized shapes for quiz rendering: id + geometry only, name omitted
     so the answer mapping never ships to the client."""
+    shape = GeometrySerializerMethodField()
+
     class Meta:
         model = Neighborhood
-        geo_field = 'geometry'
+        geo_field = 'shape'
         fields = ('id',)
+
+    def get_shape(self, obj):
+        return getattr(obj, 'simplified', None) or obj.geometry
